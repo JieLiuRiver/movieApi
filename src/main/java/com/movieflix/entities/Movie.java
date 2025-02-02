@@ -12,6 +12,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @NoArgsConstructor
@@ -23,7 +24,7 @@ public class Movie {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer movieId;
 
-  @Column(nullable = false)
+  @Column(nullable = false) 
   @NotBlank(message = "Title is required")
   private String title;
 
@@ -32,15 +33,15 @@ public class Movie {
   private String director;
 
   @Column(nullable = false)
-  @NotBlank(message = "Audio is required")
-  private String audio;
+  @NotBlank(message = "Studio is required")
+  private String studio;
 
   @ElementCollection
   @CollectionTable(name = "movie_cast")
   private Set<String> movieCast;
 
   @Column(nullable = false)
-  @NotBlank(message = "Release year is required")
+  @NotNull(message = "Release year is required")
   private Integer releaseYear;
 
   @Column(nullable = false)

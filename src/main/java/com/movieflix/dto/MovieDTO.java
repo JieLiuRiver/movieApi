@@ -5,10 +5,12 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Setter
 public class MovieDTO {
 
   private Integer movieId;
@@ -19,8 +21,8 @@ public class MovieDTO {
   @NotBlank(message = "Director is required")
   private String director;
 
-  @NotBlank(message = "Audio is required")
-  private String audio;
+  @NotBlank(message = "Studio is required")
+  private String studio;
 
   private Set<String> movieCast;
 
